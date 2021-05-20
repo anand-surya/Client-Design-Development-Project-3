@@ -1,0 +1,78 @@
+﻿@{ ViewData["Title"] = "Home Page"; }
+
+@section CSS {
+    <style>
+        .container {
+            position: relative;
+            text-align: center;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+        body {
+            background-color: bisque;
+        }
+
+        h1 {
+            color: white;
+            font-weight: 800;
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        img {
+            width: 100%;
+            height: 300px;
+        }
+
+        blockquote {
+            border-right: solid 4px orange;
+            border-left: solid 4px orange;
+        }
+
+        cite {
+            border-right: solid 4px orange;
+            border-left: solid 4px orange;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        #desc {
+            border: solid 4px rgba(255, 255, 255, 0);
+        }
+    </style>
+}
+
+@*Get jQuery and jQueryUI Scripts from wwwroot*@
+@section Scripts {
+    <script src="~/jquery/jquery.js"></script>
+    <link rel="stylesheet" href="~/jqueryui/themes/cupertino/jquery-ui.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="~/jqueryui/jquery-ui.js"></script>
+    <script></script>
+}
+
+@model Project3_FinalExam.ViewModels.IndexViewModel
+<div class="container">
+    <img src="~/img/rit_img.jpg" />
+    <div class="centered"><h1>Information Sciences & Technology</h1></div>
+</div>
+<div>
+    <p>
+        <b>@Model.Ind.title</b>
+    </p>
+    <p id="desc">
+        @Model.Ind.description
+    </p>
+
+    <blockquote>@Model.Ind.quote</blockquote>
+    <cite>@Model.Ind.quoteAuthor</cite>
+
+
+</div>
+
